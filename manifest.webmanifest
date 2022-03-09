@@ -5,25 +5,25 @@
   "lang": "sv-se",
   "categories": "finance",
   "display": "fullscreen",
-  "start_url": "https://magev958.github.io/Project-Blue-Porcupine/",
-  "scope": "https://magev958.github.io/Project-Blue-Porcupine/",
+  "start_url": "/",
+  "scope": "/",
   "orientation": "portrait-primary",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "serviceworker": {
-    "src": "https://magev958.github.io/Project-Blue-Porcupine/serviceWorker.js",
-    "scope": "https://magev958.github.io/Project-Blue-Porcupine/",
+    "src": "/serviceWorker.js",
+    "scope": "/",
     "type": "",
     "update_via_cache": "none"
   },
   "icons": [
 	{
-	"src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png",
+	"src": "/Images/icon-192.png",
 	"type": "image/png",
 	"sizes": "192x192"
 	},
     {
-	"src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-512.png",
+	"src": "/Images/icon-512.png",
 	"type": "image/png",
 	"sizes": "512x512"
 	}
@@ -34,49 +34,49 @@
       "short_name": "Budget",
       "description": "Personlig begdetkalkyl för Magnus",
       "url": "/index.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Månadsfördelning",
       "short_name": "Fördelning",
       "description": "Senaste månadens fördelning",
       "url": "/distribution.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Investeringstransaktioner",
       "short_name": "Investeringar",
       "description": "Utfall av investeringarna",
       "url": "/investments.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Senaste transaktioner",
       "short_name": "Senaste",
       "description": "7 senaste transaktioner",
       "url": "/latest.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Nedkopplad wifi",
       "short_name": "Nedkopplad",
       "description": "Ingen åtkomst till wifi ",
       "url": "/offline.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Tack",
       "short_name": "Tack",
       "description": "Tack för en berömlig insats",
       "url": "/thanks.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Rutintransaktioner",
       "short_name": "Transaktioner",
       "description": "Skicka transaktioner",
       "url": "/transactions.html",
-      "icons": [{ "src": "https://magev958.github.io/Project-Blue-Porcupine/Images/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
