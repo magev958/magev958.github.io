@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard senaste</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Senaste utgifterna</h1>
+    </header>
+	<main>
+    <article>
+        <section>
+            <h3>7 senaste transaktionerna</h3><br>
+				<iframe id="transaktions" title="Transaktioner" class="table x-tall" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1303280110&amp;range=Q18:S31"></iframe>
+		</section>
+		<aside>
+			<canvas id="meter" width="150" height="300">[No canvas support]</canvas>
+		</aside>
+    </article>
+	</main>
+    <nav>
+			<button type="button" onclick="location.href='transactions.html'">transaktion
+			</button>
+			<button type="button" onclick="location.href='investments.html'">investeringar
+			</button>
+			<button type="button" onclick="location.href='latest.html'">senaste
+			</button>
+			<button type="button" onclick="location.href='distribution.html'">fördelning
+			</button>
+	</nav>
+	
+	<script src="Javascript/RGraph/RGraph.common.core.js"></script>
+	<script src="Javascript/RGraph/RGraph.common.sheets.js"></script>
+	<script src="Javascript/RGraph/RGraph.meter.js"></script>
+	<script>
+            defaultColors=[[0, 30, "#8FCE21"],[30, 37.5, "#FFEE58"],[37.5, 45, "#FFC107"],[45, 52.5, "#FB8C00"],[52.5, 60, "#E64A19"]],
+            	new RGraph.Sheets(
+					'AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY',
+					'1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
+					'Dashboard',
+					function(e)
+            			{
+            				var a=e.get('I15');
+            			new RGraph.Meter({
+            				id: "meter",
+            				min: 0,
+            				max: 60,
+            				value: a,
+            				options:{
+            					colorsRanges: defaultColors,
+            					labelsCount: 0,
+            					anglesStart: RGraph.PI - 1.6,
+            					anglesEnd: RGraph.TWOPI - 1.55,
+            					marginBottom: 150,
+								marginRight: -150,
+            					segmentsRadiusStart: 150,
+            					needleRadius: 90,
+            					needleType: "pointer",
+								backgroundColor: "white",
+            					border: 0
+            					}
+            				}).grow()});
+	</script>
+
+</body>
+</html>

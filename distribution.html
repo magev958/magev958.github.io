@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard f&ouml;rdelning</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Senaste m&aring;nadens f&ouml;rdelning</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h3 class="center">Total kostnad</h3>
+                <canvas id="total" width="260" height="260">[No canvas support]</canvas>
+                <iframe title="Transaktioner" class="table short" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=D23:F25"></iframe>
+            </section>
+            <section>
+                <h3 class="center">Boende kostnad</h3>
+                <canvas id="housing" width="260" height="260">[No canvas support]</canvas>
+                <iframe title="Transaktioner" class="table short" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=H23:J26"></iframe>
+            </section>
+        </article>
+        <article>
+            <section>
+                <h3 class="center">Fasta kostnad</h3>
+                <canvas id="fixed" width="260" height="260">[No canvas support]</canvas>
+                <iframe title="Transaktioner" class="table tall" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=L23:N31"></iframe>
+            </section>
+            <section>
+                <h3 class="center">R&ouml;rliga kostnad</h3>
+                <canvas id="variable" width="260" height="260">[No canvas support]</canvas>
+                <iframe title="Transaktioner" class="table tall" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=P23:R31"></iframe>
+            </section>
+        </article>
+    </main>
+    <nav>
+        <button type="button" onclick="location.href='transactions.html'">transaktion
+			</button>
+        <button type="button" onclick="location.href='investments.html'">investeringar
+			</button>
+        <button type="button" onclick="location.href='latest.html'">senaste
+			</button>
+        <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
+			</button>
+    </nav>
+    <script src="Javascript/RGraph/RGraph.common.core.js"></script>
+    <script src="Javascript/RGraph/RGraph.common.sheets.js"></script>
+    <script src="Javascript/RGraph/RGraph.common.key.js"></script>
+    <script src="Javascript/RGraph/RGraph.common.dynamic.js"></script>
+    <script src="Javascript/RGraph/RGraph.common.tooltips.js"></script>
+    <script src="Javascript/RGraph/RGraph.pie.js"></script>
+	<script>
+	    new RGraph.Sheets(
+	        "AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY",
+	        "1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU",
+	        "Månadsfördelning",
+	        function(sheet) {
+	            "use strict";
+	            var data = sheet.get('F23:F25');
+	            var labels = sheet.get('E23:E25');
+
+	            for (var i = 0; i < data.length; ++i) {
+	                data[i] = Number(data[i].replace(/[^.0-9]+/g, ''));
+	            }
+
+	            for (var i = 0; i < labels.length; i += 2) {
+	                labels[i] = "\n" + labels[i];
+	            }
+
+	            var bar = new RGraph.Pie({
+	                id: "total",
+	                data: data,
+	                options: {
+	                    colors: ["#425ffd", "#3a7822", "#f46524"],
+	                    shadow: false,
+	                    colorsStroke: "white",
+	                    linewidth: 2,
+	                    textSize: 16,
+	                    tooltips: '<span style="font-size:12pt">%{property:myDaynames[%{index}]}<br /><span style="font-weight: bold; font-size:20pt">%{value_formatted}</span>',
+	                    tooltipsFormattedUnitsPost: "kr",
+	                    tooltipsPointer: false,
+	                    tooltipsPositionStatic: false,
+	                    tooltipsCss: {
+	                        backgroundColor: "white",
+	                        color: "black",
+	                        border: "3px solid black",
+	                    },
+	                    myDaynames: labels,
+	                    keyPositionGraphBoxed: false,
+	                },
+	            }).draw();
+	        });
+	</script>
+	<script>
+	    new RGraph.Sheets(
+	        'AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY',
+	        '1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
+	        'Månadsfördelning',
+	        function(sheet) {
+	            var data = sheet.get('J23:J27');
+	            var labels = sheet.get('I23:I26');
+
+	            for (var i = 0; i < data.length; ++i) {
+	                data[i] = Number(data[i].replace(/[^.0-9]+/g, ''));
+	            }
+
+	            for (var i = 0; i < labels.length; i += 2) {
+	                labels[i] = "\n" + labels[i];
+	            }
+
+	            var bar = new RGraph.Pie({
+	                id: 'housing',
+	                data: data,
+	                options: {
+	                    colors: ['#425ffd', '#687ffe', '#8e9ffe', '#b3bffe'],
+	                    shadow: false,
+	                    colorsStroke: 'white',
+	                    linewidth: 2,
+	                    textSize: 16,
+	                    tooltips: '<span style="font-size:12pt">%{property:myDaynames[%{index}]}<br /><span style="font-weight: bold; font-size:20pt">%{value_formatted}</span>',
+	                    tooltipsFormattedUnitsPost: 'kr',
+	                    tooltipsPointer: false,
+	                    tooltipsPositionStatic: false,
+	                    tooltipsCss: {
+	                        backgroundColor: 'white',
+	                        color: 'black',
+	                        border: '3px solid black'
+	                    },
+	                    myDaynames: labels,
+	                    keyPositionGraphBoxed: false,
+	                }
+	            }).draw();
+	        });
+	</script>
+	<script>
+	    new RGraph.Sheets(
+	        'AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY',
+	        '1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
+	        'Månadsfördelning',
+	        function(sheet) {
+	            var data = sheet.get('N23:N31');
+	            var labels = sheet.get('M23:M31');
+
+	            for (var i = 0; i < data.length; ++i) {
+	                data[i] = Number(data[i].replace(/[^.0-9]+/g, ''));
+	            }
+
+	            for (var i = 0; i < labels.length; i += 2) {
+	                labels[i] = "\n" + labels[i];
+	            }
+
+	            var bar = new RGraph.Pie({
+	                id: 'fixed',
+	                data: data,
+	                options: {
+	                    colors: ['#3a7822', '#418626', '#48952b', '#4fa32f', '#56b233', '#5ec137', '#67c941', '#73cd50', '#7fd15f'],
+	                    shadow: false,
+	                    colorsStroke: 'white',
+	                    linewidth: 2,
+	                    textSize: 16,
+	                    tooltips: '<span style="font-size:12pt">%{property:myDaynames[%{index}]}<br /><span style="font-weight: bold; font-size:20pt">%{value_formatted}</span>',
+	                    tooltipsFormattedUnitsPost: 'kr',
+	                    tooltipsPointer: false,
+	                    tooltipsPositionStatic: false,
+	                    tooltipsCss: {
+	                        backgroundColor: 'white',
+	                        color: 'black',
+	                        border: '3px solid black'
+	                    },
+	                    myDaynames: labels,
+	                    keyPositionGraphBoxed: false,
+	                }
+	            }).draw();
+	        });
+	</script>
+	<script>
+	    new RGraph.Sheets(
+	        'AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY',
+	        '1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
+	        'Månadsfördelning',
+	        function(sheet) {
+	            var data = sheet.get('R23:R31');
+	            var labels = sheet.get('Q23:Q31');
+
+	            for (var i = 0; i < data.length; ++i) {
+	                data[i] = Number(data[i].replace(/[^.0-9]+/g, ''));
+	            }
+
+	            for (var i = 0; i < labels.length; i += 2) {
+	                labels[i] = "\n" + labels[i];
+	            }
+
+	            var bar = new RGraph.Pie({
+	                id: 'variable',
+	                data: data,
+	                options: {
+	                    colors: ['#f46524', '#f67132', '#f87d40', '#fa884e', '#fb935c', '#fd9e6a', '#fea978', '#ffb387', '#ffbd96'],
+	                    shadow: false,
+	                    colorsStroke: 'white',
+	                    linewidth: 2,
+	                    textSize: 16,
+	                    tooltips: '<span style="font-size:12pt">%{property:myDaynames[%{index}]}<br /><span style="font-weight: bold; font-size:20pt">%{value_formatted}</span>',
+	                    tooltipsFormattedUnitsPost: 'kr',
+	                    tooltipsPointer: false,
+	                    tooltipsPositionStatic: false,
+	                    tooltipsCss: {
+	                        backgroundColor: 'white',
+	                        color: 'black',
+	                        border: '3px solid black'
+	                    },
+	                    myDaynames: labels,
+	                    keyPositionGraphBoxed: false,
+	                }
+	            }).draw();
+	        });
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Välkomstsida</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="darkgray">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Välkommen</h1>
+    </header>
+    <main>
+        <article>
+            <ul id="tips">
+                <li>"&Auml;ven om inkomsterna &auml;ro stora nog, r&auml;cker de ej l&aring;ngt, om hemmet ej sk&ouml;ts med ordning och omtanke"</li>
+                <li>"En d&aring;lig ekonomi blir i regel icke b&auml;ttre genom l&aring;n, utan tv&auml;rtom s&auml;mre"</li>
+                <li>"Det b&auml;sta s&auml;ttet att bli rik snabbt &auml;r att ha behov av s&aring; lite pengar som m&ouml;jligt"</li>
+                <li>"Rikedom ger inget skydd mot olyckor, men jag gr&aring;ter hellre i en Jaguar &auml;n i en buss"</li>
+                <li>"Ta hand om &ouml;rena så sk&ouml;ter kronorna sig sj&auml;lva"</li>
+            </ul>
+        </article>
+    </main>
+    <nav>
+        <button type="button" onclick="location.href='transactions.html'">transaktion
+			</button>
+        <button type="button" onclick="location.href='investments.html'">investeringar
+			</button>
+        <button type="button" onclick="location.href='latest.html'">senaste
+			</button>
+        <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
+			</button>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="crossorigin="anonymous"></script>
+    <script>
+        this.randomtip = function(){
+        			var length = $("#tips li").length;
+        			var ran = Math.floor(Math.random()*length) + 1;
+        				$("#tips li:nth-child(" + ran + ")").show();
+        			};
+        
+        			$(document).ready(function(){	
+        			randomtip();
+        		});
+    </script>
+
+</body>
+
+</html>

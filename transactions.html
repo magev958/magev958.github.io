@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transaktioner</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+</head>
+
+<body>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSciA6CssXiMQOthD9W6pK8fVIVArC9Fm0-4FrOt1AYJSzRLWA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        <header>
+            <h1>Transaktioner</h1>
+        </header>
+        <main>
+            <article>
+                <section>
+                    <h3><label for="date">Datum</label></h3>
+                    <input type="date" id="date" name="entry.876086869" required placeholder="yyyy-mm-dd">
+				</section>
+			</article>
+			<article>
+				<section>
+                    <h3><label for="sum">Summa</label></h3>
+                    <input pattern="\d\,?\d{0,2}" type="text" id="sum" name="entry.1784226391" required placeholder="belopp">
+				</section>
+			</article>
+			<article>
+				<section>
+                    <h3><label for="description">Beskrivning</label></h3>
+                    <input type="text" id="description" name="entry.1287339705" required placeholder="beskrivning">
+				</section>
+			</article>
+			<article>
+				<section>
+                    <h3><label for="category">Kategori</label></h3>
+                    <select id="category" name="entry.1778965403" required>
+						<option value="" selected disabled hidden>välj</option>
+						<optgroup label="Boende">
+							<option value="Hyra">Hyra</option>
+							<option value="Bolån">Bol&aring;n</option>
+							<option value="El">El</option>
+							<option value="Hemförsäkring">Hemf&ouml;rs&auml;kring</option>
+						</optgroup>
+						<optgroup label="Transport">
+							<option value="Bil">Bil</option>
+							<option value="Kollektivresor">Kollektivresor</option>
+						</optgroup>
+						<optgroup label="Allm&auml;nna omkostnader">
+							<option value="Försäkringar">F&ouml;rs&auml;kringar</option>
+							<option value="Fackförbund">Fackförbund</option>
+							<option value="A-kassa">A-kassa</option>
+							<option value="Återbetalning lån">&Aring;terbetalning l&aring;n</option>
+							<option value="Abonnemang">Abonnemang</option>
+							<option value="Bankavgifter">Bankavgifter</option>
+							<option value="Livsmedel">Livsmedel</option>
+							<option value="Underhåll">Underh&aring;ll</option>
+							<option value="Barnspar">Barnspar</option>
+							<option value="Övrigt">&Ouml;vrigt</option>
+						</optgroup>
+						<optgroup label="R&ouml;rliga kostnader">
+							<option value="Snacks & fika">Snacks &amp; fika</option>
+							<option value="Äta ute">&Auml;ta ute</option>
+							<option value="Hygien- & skönhetsartiklar">Hygien- & sk&ouml;nhetsartiklar</option>
+							<option value="Förbrukningsprodukter">F&ouml;rbrukningsprodukter</option>
+							<option value="Kläder & skor">Kl&auml;der &amp; skor</option>
+							<option value="Hemutrustning">Hemutrustning</option>
+							<option value="Hälsovård">H&auml;lsov&aring;rd</option>
+							<option value="Fritid & nöjen">Fritid &amp; n&ouml;jen</option>
+							<option value="Barn">Barn</option>
+							<option value="Övriga rörliga kostnader">&Ouml;vriga r&ouml;rliga kostnader</option>
+						</optgroup>
+						<optgroup label="Sparande">
+							<option value="Avanza">M&aring;nadssparande</option>
+							<option value="Lysa">Pensionssparande</option>
+						</optgroup>
+						<optgroup label="Inkomster">
+							<option value="Landsting Östergötland">L&ouml;n</option>
+							<option value="Övriga inkomster">&Ouml;vriga inkomster</option>
+						</optgroup>
+					</select>
+                </section>
+            </article>
+        </main>
+        <nav style="bottom:100px">
+            <button type="submit">skicka</button>
+        </nav>
+        <nav>
+            <button type="button" onclick="location.href='transactions.html'">transaktion
+			</button>
+            <button type="button" onclick="location.href='investments.html'">investeringar
+			</button>
+            <button type="button" onclick="location.href='latest.html'">senaste
+			</button>
+            <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
+			</button>
+        </nav>
+    </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}">
+	</iframe>
+    <script type="text/javascript">
+        var submitted=false;
+    </script>
+</body>
+
+</html>
