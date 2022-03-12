@@ -2,13 +2,22 @@
 <html lang="sv-se">
 
 <head>
-    <meta charset="utf-8">
-    <title>Dashboard f&ouml;rdelning</title>
-    <meta name="description" content="Personlig budgetkalkyl för Magnus">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="favicon.ico">
-    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+	<meta charset="utf-8">
+	<title>Dashboard f&ouml;rdelning</title>
+	<meta name="description" content="Personlig budgetkalkyl för Magnus">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="darkgray">
+
+	<link rel="icon" href="favicon.ico" sizes="any">
+	<link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+	<link rel="manifest" href="manifest.webmanifest">
+	<link rel="stylesheet" href="CascadingStyleSheets/styles.css">
 </head>
 
 <body>
@@ -51,6 +60,9 @@
         <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
 			</button>
     </nav>
+	<script>
+		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.core.min.js" integrity="sha512-uicQyGgzNfQxAqhx3QtC6SyJ24s3t+rG6rlGPypopvkVDyxHqsZU5Y/4svn+q0wQBqH9O3PwlE3BKUyDFzDP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js" integrity="sha512-Ie9fHbuaumuhyjSzHbRO+fVVNjc4jRYjSigbwn1YYu0mrwGOWTiXj6KkeWlrk3cgMPcbZzFVyPipwVnvMXq7Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.key.min.js" integrity="sha512-/ZhwcyA6QbrhbzHifPWx4HTn6bkx9KrjWjCx/QHDhz1KGAyU37pI0DTpQpUek8R2jLg2Xm9ri3GPjTK1bQU9Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
