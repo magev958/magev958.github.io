@@ -5,7 +5,7 @@
   "lang": "sv-se",
   "categories": "finance",
   "display": "fullscreen",
-  "start_url": "/",
+  "start_url": "/index.html",
   "scope": "/",
   "orientation": "portrait-primary",
   "theme_color": "#ffffff",
