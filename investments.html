@@ -7,76 +7,87 @@
     <meta name="description" content="Personlig budgetkalkyl för Magnus">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="darkgray">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
 </head>
 
 <body>
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd_WQwTe9mlrvjfxXfl5zECzDD-9Z3ss2QDEzqz_DcI64w2DQ/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-        <header>
-            <h1>Investeringar</h1>
-        </header>
-		<main>
-			<article>
-				<section>
-					<h3><label for="date">Datum</h3>
+    <header>
+        <h1>Investeringar</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h3><label for="date">Datum</h3>
                     <input type="date" id="date" name="entry.957079605" required placeholder="yyyy-mm-dd">
 				</section>
-			</article>
-			<article>
-				<section>
-					<h3><label for="sum_avanza">Avanza</h3>
-                    <input type="number" min="0" step="0.01" id="sum_avanza" name="entry.163121068" required placeholder="belopp">
-				</section>
-			</article>
-			<article>
-				<section>
-					<h3><label for="sum_lysa">Lysa</h3>
-                    <input type="number" min="0" step="0.01" id="sum_lysa" name="entry.999915928" required placeholder="belopp">
-				</section>
-			</article>
-			<article>
-				<section>
-					<h3><label for="sum_nordnet">Nordnet</h3>
-                    <input type="number" min="0" step="0.01" id="sum_nordnet" name="entry.2074101085" required placeholder="belopp">
-				</section>
-			</article>
-			<article>
-				<section>
-					<h3><label for="sum_garantum">Garantum</h3>
-                    <input type="number" min="0" step="0.01" id="sum_garantum" name="entry.822899927" required placeholder="belopp">
-				</section>
-			</article>
-			<article>
-				<section>
-					<h3><label for="sum_folksom">Folksam</h3>
-                    <input type="number" min="0" step="0.01" id="sum_folksam" name="entry.1298989261" required placeholder="belopp">
-				</section>
-			</article>
-			<article>
-				<section>
-					<h3><label for="sum_dept">Låneskuld</h3>
-                    <input type="number" min="0" step="0.01" id="sum_debt" name="entry.126021406" required placeholder="belopp">
-				</section>
-			</article>
-		</main>
-        <nav style="bottom:100px">
-			<button type="submit">skicka
-			</button>
-		</nav>
-		<nav>
-			<button type="button" onclick="location.href='transactions.html'">transaktion
-			</button>
-			<button type="button" onclick="location.href='investments.html'">investeringar
-			</button>
-			<button type="button" onclick="location.href='latest.html'">senaste
-			</button>
-			<button type="button" onclick="location.href='distribution.html'">fördelning
-			</button>
-        </nav>
-    </form>
+		</article>
+		<article>
+			<section>
+				<h3><label for="sum_avanza">Avanza</h3>
+                   <input type="number" min="0" step="0.01" id="sum_avanza" name="entry.163121068" required placeholder="belopp">
+			</section>
+		</article>
+		<article>
+			<section>
+				<h3><label for="sum_lysa">Lysa</h3>
+                <input type="number" min="0" step="0.01" id="sum_lysa" name="entry.999915928" required placeholder="belopp">
+			</section>
+		</article>
+		<article>
+			<section>
+				<h3><label for="sum_nordnet">Nordnet</h3>
+                <input type="number" min="0" step="0.01" id="sum_nordnet" name="entry.2074101085" required placeholder="belopp">
+			</section>
+		</article>
+		<article>
+			<section>
+				<h3><label for="sum_garantum">Garantum</h3>
+                <input type="number" min="0" step="0.01" id="sum_garantum" name="entry.822899927" required placeholder="belopp">
+			</section>
+		</article>
+		<article>
+			<section>
+				<h3><label for="sum_folksom">Folksam</h3>
+                <input type="number" min="0" step="0.01" id="sum_folksam" name="entry.1298989261" required placeholder="belopp">
+			</section>
+		</article>
+		<article>
+			<section>
+				<h3><label for="sum_dept">Låneskuld</h3>
+                <input type="number" min="0" step="0.01" id="sum_debt" name="entry.126021406" required placeholder="belopp">
+			</section>
+		</article>
+	</main>
+    <nav style="bottom:100px">
+		<button type="submit">skicka
+		</button>
+	</nav>
+	<nav>
+		<button type="button" onclick="location.href='transactions.html'">transaktion
+		</button>
+		<button type="button" onclick="location.href='investments.html'">investeringar
+		</button>
+		<button type="button" onclick="location.href='latest.html'">senaste
+		</button>
+		<button type="button" onclick="location.href='distribution.html'">fördelning
+		</button>
+    </nav>
+	</form>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thanks.html';}">
 	</iframe>
+	<script>
+		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
+	</script>
     <script type="text/javascript">
         var submitted=false;
     </script>

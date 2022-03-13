@@ -2,22 +2,24 @@
 <html lang="sv-se">
 
 <head>
-	<meta charset="utf-8">
-	<title>Dashboard f&ouml;rdelning</title>
-	<meta name="description" content="Personlig budgetkalkyl för Magnus">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Dashboard f&ouml;rdelning</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="msapplication-starturl" content="/">
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
 	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="darkgray">
 
-	<link rel="icon" href="favicon.ico" sizes="any">
-	<link rel="icon" href="Images/icon.svg" type="image/svg+xml">
-	<link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
-	<link rel="manifest" href="manifest.webmanifest">
-	<link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">	
+	<link rel="preconnect" href="https://sheets.googleapis.com">
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 
 <body>
@@ -52,24 +54,24 @@
     </main>
     <nav>
         <button type="button" onclick="location.href='transactions.html'">transaktion
-			</button>
+		</button>
         <button type="button" onclick="location.href='investments.html'">investeringar
-			</button>
+		</button>
         <button type="button" onclick="location.href='latest.html'">senaste
-			</button>
+		</button>
         <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
-			</button>
+		</button>
     </nav>
-	<script>
-		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
-	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.core.min.js" integrity="sha512-uicQyGgzNfQxAqhx3QtC6SyJ24s3t+rG6rlGPypopvkVDyxHqsZU5Y/4svn+q0wQBqH9O3PwlE3BKUyDFzDP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js" integrity="sha512-Ie9fHbuaumuhyjSzHbRO+fVVNjc4jRYjSigbwn1YYu0mrwGOWTiXj6KkeWlrk3cgMPcbZzFVyPipwVnvMXq7Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.key.min.js" integrity="sha512-/ZhwcyA6QbrhbzHifPWx4HTn6bkx9KrjWjCx/QHDhz1KGAyU37pI0DTpQpUek8R2jLg2Xm9ri3GPjTK1bQU9Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.svg.common.key.min.js" integrity="sha512-/JU9nz/uxjbJIHk84guMU5i9cbO0j7aCj3QS89aipV6REZpbwIh19Ma5fKP24dAj9D/kA3gLQlUUTSvo3bE7jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.dynamic.min.js" integrity="sha512-6DAHWZOyQndt3E7vpDUAT0XB32XXDdWYrRHpl1LirYallMGDWYhunQtmeiHDbuV/C0NldudsesuNaBQMfG3OpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.tooltips.min.js" integrity="sha512-t1aTXcZ0EYArYyMAUes6G3p28MRRVk0MiV8VIVnKa5tWlOkC1wf5giTDw2qnQDKPMvCagjN0gbvgaPauDHpuRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.pie.min.js" integrity="sha512-L9a3q5YXd3gFY7bHlLMMzVdWm+A0QOHbYbZcu5wi7YdzADnLkWA+Jjm47b/Dfr35mURimrUefrG5WBrybfhKlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
+		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
+	</script>
+    <script>
 	    new RGraph.Sheets(
 	        "AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY",
 	        "1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU",
@@ -117,6 +119,7 @@
 	        '1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
 	        'Månadsfördelning',
 	        function(sheet) {
+	            "use strict";
 	            var data = sheet.get('J23:J27');
 	            var labels = sheet.get('I23:I26');
 
@@ -158,6 +161,7 @@
 	        '1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
 	        'Månadsfördelning',
 	        function(sheet) {
+	            "use strict";
 	            var data = sheet.get('N23:N31');
 	            var labels = sheet.get('M23:M31');
 
@@ -199,6 +203,7 @@
 	        '1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
 	        'Månadsfördelning',
 	        function(sheet) {
+	            "use strict";
 	            var data = sheet.get('R23:R31');
 	            var labels = sheet.get('Q23:Q31');
 

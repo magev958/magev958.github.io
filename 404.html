@@ -7,9 +7,17 @@
     <meta name="description" content="Personlig budgetkalkyl för Magnus">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="favicon.ico">
-    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="darkgray">
 
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
 </head>
 
 <body>
@@ -20,12 +28,16 @@
     <article>
         <section>
             <p>Det verkar vara problem med nätverksuppkopplingen</p>
-			</section>
+		</section>
     </article>
 	</main>
     <nav>
-		<button type="button" onclick="location.href='index.html'">försök igen</button>
+		<button type="button" onclick="location.href='index.html'">försök igen
+		</button>
 	</nav>
+	<script>
+		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
+	</script>
 </body>
 
 </html>
