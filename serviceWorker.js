@@ -2,7 +2,7 @@ const OFFLINE_VERSION = 2;
 const CACHE_NAME = 'offline_v02';
 const OFFLINE_URL = '404.html';
 
-this.addEventListener('install', function(event) {
+self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('offline_v02').then(function(cache) {
       return cache.addAll([
