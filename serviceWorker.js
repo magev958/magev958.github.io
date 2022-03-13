@@ -30,7 +30,7 @@ const PRECACHE_URLS = [
 self.addEventListener('install', (event) => {
     event.waitUntil((async() => {
         const cache = await caches.open(CACHE_NAME);
-        await cache.add(new Request(OFFLINE_URL, {
+        await cache.add(new Request(PRECACHE_URLS, {
             cache: 'reload'
         }));
     })());
