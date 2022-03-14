@@ -26,7 +26,6 @@ const PRECACHE_URLS = [
 	"Javascript/RGraph/RGraph.meter.js",
 	"Javascript/RGraph/RGraph.pie.js"
 ];
-const contentToCache = PRECACHE_URLS;
 
 self.addEventListener('install', (event) => {
     event.waitUntil((async() => {
