@@ -1,7 +1,6 @@
-const OFFLINE_VERSION = 1;
-const CACHE_NAME = 'offline';
-const OFFLINE_URL = '404.html';
-const PRECACHE_URLS = [
+const CACHE_NAME = 'budget';
+const URLS_CACHE_ONLY = ["offline.html", "offline.png"];
+const URLS_OVER_NETWORK_WITH_CACHE_FALLBACK = [
 	"favicon.ico",
     "404.html",
     "distribution.html",
@@ -16,53 +15,54 @@ const PRECACHE_URLS = [
 	"Images/favicon-128x128.png",
 	"Images/icon.svg",
 	"Images/icon-192.png",
-	"Images/icon-512.png",
-    "JavaScript/jQuery-3.6.0.slim.min.js",
-	"Javascript/RGraph/RGraph.common.core.js",
-	"Javascript/RGraph/RGraph.common.sheets.js",
-	"Javascript/RGraph/RGraph.common.key.js",
-	"Javascript/RGraph/RGraph.common.dynamic.js",
-	"Javascript/RGraph/RGraph.common.tooltips.js",
-	"Javascript/RGraph/RGraph.meter.js",
-	"Javascript/RGraph/RGraph.pie.js"
-];
-
-self.addEventListener('install', (event) => {
-    event.waitUntil((async() => {
-        const cache = await caches.open(CACHE_NAME);
-        await cache.add(new Request(OFFLINE_URL, {
-            cache: 'reload'
-        }));
-    })());
+	"Images/icon-512.png"
+	];
+self.addEventListener("install", function(event) {
+    event.waitUntil(caches.open(CACHE_NAME).then(function(cache) {
+        return cache.addAll(URLS_CACHE_ONLY.concat(URLS_OVER_NETWORK_WITH_CACHE_FALLBACK))
+    }).catch((err) => {
+        console.error(err);
+        return new Promise((resolve, reject) => {
+            reject('ERROR: ' + err)
+        })
+    }))
 });
-
-self.addEventListener('activate', (event) => {
-    event.waitUntil((async() => {
-        if ('navigationPreload' in self.registration) {
-            await self.registration.navigationPreload.enable();
-        }
-    })());
-    self.clients.claim();
-});
-
-self.addEventListener('fetch', (event) => {
-    if (event.request.mode === 'navigate') {
-        event.respondWith((async() => {
-            try {
-                const preloadResponse = await event.preloadResponse;
-                if (preloadResponse) {
-                    return preloadResponse;
-                }
-
-                const networkResponse = await fetch(event.request);
-                return networkResponse;
-            } catch (error) {
-                console.log('Fetch failed; returning offline page instead.', error);
-
-                const cache = await caches.open(CACHE_NAME);
-                const cachedResponse = await cache.match(OFFLINE_URL);
-                return cachedResponse;
-            }
-        })());
+self.addEventListener("fetch", function(event) {
+    const requestURL = new URL(event.request.url);
+    if (requestURL.pathname === '/') {
+        event.respondWith(getByNetworkFallingBackByCache("46index.html"))
+    } else if (URLS_OVER_NETWORK_WITH_CACHE_FALLBACK.includes(requestURL.href) || URLS_OVER_NETWORK_WITH_CACHE_FALLBACK.includes(requestURL.pathname)) {
+        event.respondWith(getByNetworkFallingBackByCache(event.request))
+    } else if (URLS_CACHE_ONLY.includes(requestURL.href) || URLS_CACHE_ONLY.includes(requestURL.pathname)) {
+        event.respondWith(getByCacheOnly(event.request))
     }
 });
+self.addEventListener("activate", function(event) {
+    event.waitUntil(caches.keys().then(function(cacheNames) {
+        return Promise.all(cacheNames.map(function(cacheName) {
+            if (CACHE_NAME !== cacheName && cacheName.startsWith("budget")) {
+                return caches.delete(cacheName)
+            }
+        }))
+    }))
+});
+const getByNetworkFallingBackByCache = (request, showAlert = !1) => {
+    return caches.open(CACHE_NAME).then((cache) => {
+        return fetch(request).then((networkResponse) => {
+            cache.put(request, networkResponse.clone());
+            return networkResponse
+        }).catch(() => {
+            if (showAlert) {
+                alert('Inget nätverk. Endast lokalt lagrad data.')
+            }
+            return caches.match(request)
+        })
+    })
+};
+const getByCacheOnly = (request) => {
+    return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(request).then((response) => {
+            return response
+        })
+    })
+}

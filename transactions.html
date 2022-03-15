@@ -21,6 +21,11 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+        var submitted=false;
+    </script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}">
+	</iframe>
     <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSciA6CssXiMQOthD9W6pK8fVIVArC9Fm0-4FrOt1AYJSzRLWA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
 	<header>
         <h1>Transaktioner</h1>
@@ -35,7 +40,7 @@
         <article>
             <section>
                 <h3><label for="sum">Summa</label></h3>
-                <input pattern="\d\,?\d{0,2}" type="text" id="sum" name="entry.1784226391" required placeholder="belopp">
+                <input type="text" id="sum" name="entry.1784226391" required placeholder="belopp">
             </section>
         </article>
         <article>
@@ -74,7 +79,7 @@
 						<optgroup label="R&ouml;rliga kostnader">
 							<option value="Snacks & fika">Snacks &amp; fika</option>
 							<option value="Äta ute">&Auml;ta ute</option>
-							<option value="Hygien- & skönhetsartiklar">Hygien- & sk&ouml;nhetsartiklar</option>
+							<option value="Hygien- & skönhetsartiklar">Hygien- &amp; sk&ouml;nhetsartiklar</option>
 							<option value="Förbrukningsprodukter">F&ouml;rbrukningsprodukter</option>
 							<option value="Kläder & skor">Kl&auml;der &amp; skor</option>
 							<option value="Hemutrustning">Hemutrustning</option>
@@ -110,13 +115,8 @@
 		</button>
     </nav>
 	</form>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}">
-	</iframe>
     <script>
         if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
-    </script>
-    <script type="text/javascript">
-        var submitted=false;
     </script>
 </body>
 
