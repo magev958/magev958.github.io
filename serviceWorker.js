@@ -20,11 +20,6 @@ const URLS_OVER_NETWORK_WITH_CACHE_FALLBACK = [
 self.addEventListener("install", function(event) {
     event.waitUntil(caches.open(CACHE_NAME).then(function(cache) {
         return cache.addAll(URLS_CACHE_ONLY.concat(URLS_OVER_NETWORK_WITH_CACHE_FALLBACK))
-    }).catch((err) => {
-        console.error(err);
-        return new Promise((resolve, reject) => {
-            reject('ERROR: ' + err)
-        })
     }))
 });
 self.addEventListener("fetch", function(event) {
