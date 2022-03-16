@@ -1,4 +1,4 @@
-addEventListener('install', function (event) {
+self.addEventListener('install', function (event) {
 	event.waitUntil(caches.open('offline_v01').then(function (cache) {
 		cache.add(new Request([
 			'404.html',
@@ -8,7 +8,7 @@ addEventListener('install', function (event) {
 		return;
 	}));
 });
-addEventListener('fetch', function (event) {
+self.addEventListener('fetch', function (event) {
 	var request = event.request;
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 	if (request.headers.get('Accept').includes('text/html')) {
