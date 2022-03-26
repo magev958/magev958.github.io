@@ -25,7 +25,6 @@ article {
 section {
 	width: auto;
 	font-size: 1.2em;
-	padding: 8px;
 }
 aside {
 	position: absolute;
@@ -51,7 +50,7 @@ nav button {
 	cursor: pointer;
 }
 .table {
-	width: 400px;
+	width: 363px;
 	border-style: none;
 }
 .short {
@@ -117,6 +116,7 @@ h3 {
 @media only screen and (max-device-width: 767px) {
 	main {
 		flex-direction: column;
+		margin-bottom: 150px;
 	}
 	article {
 		flex-direction: column;
