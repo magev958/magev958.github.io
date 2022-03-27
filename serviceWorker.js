@@ -26,3 +26,26 @@ self.addEventListener('install', (event) => {
       ),
   );
 });
+
+// Cache then network
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open(`static-${version}`).then(function(cache) {
+      return fetch(event.request).then(function(response) {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    })
+  );
+});
+
+// Fallback
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    }).catch(function() {
+      return caches.match('/404.html');
+    })
+  );
+});
