@@ -1,7 +1,11 @@
+const version = '1';
+
 self.addEventListener('install', (event) => {
-  event.waitUntil(async function() {
-    const cache = await caches.open('mysite-static-v3');
-    await cache.addAll([
+  event.waitUntil(
+    caches
+      .open(`static-${version}`)
+      .then((cache) =>
+        cache.addAll([
           '/',
           '/favicon.ico',
           '/404.html',
@@ -18,6 +22,7 @@ self.addEventListener('install', (event) => {
           '/Images/icon.svg',
           '/Images/icon-192.png',
           '/Images/icon-512.png'
-    ]);
-  }());
+        ]),
+      ),
+  );
 });
