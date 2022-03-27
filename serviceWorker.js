@@ -4,6 +4,13 @@ self.addEventListener('install', (event) => {
     await cache.addAll([
           '/',
           '/favicon.ico',
+          '/404.html',
+          '/distribution.html',
+          '/index.html',
+          '/investment.html',
+          '/latest.html',
+          '/thanks.html',
+          '/transactions.html',
     ]);
   }());
 });
