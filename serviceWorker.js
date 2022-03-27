@@ -1,11 +1,8 @@
-const version = '1';
-
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches
-      .open(`static-${version}`)
-      .then((cache) =>
-        cache.addAll([
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(
+        [
           '/',
           '/favicon.ico',
           '/404.html',
@@ -22,7 +19,8 @@ self.addEventListener('install', (event) => {
           '/Images/icon.svg',
           '/Images/icon-192.png',
           '/Images/icon-512.png'
-        ]),
-      ),
+        ]
+      );
+    })
   );
 });
