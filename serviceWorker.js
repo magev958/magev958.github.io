@@ -7,7 +7,7 @@ self.addEventListener('install', (event) => {
           '/404.html',
           '/distribution.html',
           '/index.html',
-          '/investment.html',
+          '/investments.html',
           '/latest.html',
           '/thanks.html',
           '/transactions.html',
