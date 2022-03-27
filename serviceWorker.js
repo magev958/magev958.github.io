@@ -3,6 +3,7 @@ self.addEventListener('install', (event) => {
     const cache = await caches.open('mysite-static-v3');
     await cache.addAll([
           '/',
+          '/favicon.ico',
     ]);
   }());
 });
