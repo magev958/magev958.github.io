@@ -43,8 +43,11 @@
 		</button>
 	</nav>
 	<script>
-		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
-	</script>
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
+    </script>
 </body>
 
 </html>

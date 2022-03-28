@@ -24,8 +24,6 @@
     <script type="text/javascript">
         var submitted=false;
     </script>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}">
-	</iframe>
     <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSciA6CssXiMQOthD9W6pK8fVIVArC9Fm0-4FrOt1AYJSzRLWA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
 	<header>
         <h1>Transaktioner</h1>
@@ -33,25 +31,25 @@
     <main>
         <article>
             <section>
-                <h3><label for="date">Datum</label></h3>
+                <h2><label for="date">Datum</label></h2>
                 <input type="date" id="date" name="entry.876086869" required placeholder="yyyy-mm-dd">
             </section>
         </article>
         <article>
             <section>
-                <h3><label for="sum">Summa</label></h3>
+                <h2><label for="sum">Summa</label></h2>
                 <input type="text" id="sum" name="entry.1784226391" required placeholder="belopp">
             </section>
         </article>
         <article>
             <section>
-                <h3><label for="description">Beskrivning</label></h3>
+                <h2><label for="description">Beskrivning</label></h2>
                 <input type="text" id="description" name="entry.1287339705" required placeholder="beskrivning">
             </section>
         </article>
         <article>
             <section>
-                <h3><label for="category">Kategori</label></h3>
+                <h2><label for="category">Kategori</label></h2>
                 <select id="category" name="entry.1778965403" required>
 						<option value="" selected disabled hidden>välj</option>
 						<optgroup label="Boende">
@@ -115,8 +113,13 @@
 		</button>
     </nav>
 	</form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}">
+	</iframe>
     <script>
-        if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
     </script>
 </body>
 

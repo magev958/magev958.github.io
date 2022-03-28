@@ -17,7 +17,7 @@
     <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">	
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
 	<link rel="preconnect" href="https://sheets.googleapis.com">
 	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
@@ -29,24 +29,24 @@
     <main>
         <article>
             <section>
-                <h3 class="center">Total kostnad</h3>
+                <h2 class="center">Total kostnad</h2>
                 <canvas id="total" width="260" height="260">[No canvas support]</canvas>
                 <iframe title="Transaktioner" class="table short" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=D23:F25"></iframe>
             </section>
             <section>
-                <h3 class="center">Boende kostnad</h3>
+                <h2 class="center">Boende kostnad</h2>
                 <canvas id="housing" width="260" height="260">[No canvas support]</canvas>
                 <iframe title="Transaktioner" class="table short" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=H23:J26"></iframe>
             </section>
         </article>
         <article>
             <section>
-                <h3 class="center">Fasta kostnad</h3>
+                <h2 class="center">Fasta kostnad</h2>
                 <canvas id="fixed" width="260" height="260">[No canvas support]</canvas>
                 <iframe title="Transaktioner" class="table tall" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=L23:N31"></iframe>
             </section>
             <section>
-                <h3 class="center">R&ouml;rliga kostnad</h3>
+                <h2 class="center">R&ouml;rliga kostnad</h2>
                 <canvas id="variable" width="260" height="260">[No canvas support]</canvas>
                 <iframe title="Transaktioner" class="table tall" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1984199211&amp;range=P23:R31"></iframe>
             </section>
@@ -62,15 +62,18 @@
         <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
 		</button>
     </nav>
+	<script>
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
+    </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.core.min.js" integrity="sha512-uicQyGgzNfQxAqhx3QtC6SyJ24s3t+rG6rlGPypopvkVDyxHqsZU5Y/4svn+q0wQBqH9O3PwlE3BKUyDFzDP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js" integrity="sha512-Ie9fHbuaumuhyjSzHbRO+fVVNjc4jRYjSigbwn1YYu0mrwGOWTiXj6KkeWlrk3cgMPcbZzFVyPipwVnvMXq7Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.svg.common.key.min.js" integrity="sha512-/JU9nz/uxjbJIHk84guMU5i9cbO0j7aCj3QS89aipV6REZpbwIh19Ma5fKP24dAj9D/kA3gLQlUUTSvo3bE7jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.dynamic.min.js" integrity="sha512-6DAHWZOyQndt3E7vpDUAT0XB32XXDdWYrRHpl1LirYallMGDWYhunQtmeiHDbuV/C0NldudsesuNaBQMfG3OpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.tooltips.min.js" integrity="sha512-t1aTXcZ0EYArYyMAUes6G3p28MRRVk0MiV8VIVnKa5tWlOkC1wf5giTDw2qnQDKPMvCagjN0gbvgaPauDHpuRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.pie.min.js" integrity="sha512-L9a3q5YXd3gFY7bHlLMMzVdWm+A0QOHbYbZcu5wi7YdzADnLkWA+Jjm47b/Dfr35mURimrUefrG5WBrybfhKlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script>
-		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
-	</script>
     <script>
 	    new RGraph.Sheets(
 	        "AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY",

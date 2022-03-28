@@ -6,6 +6,7 @@
   "categories": "finance",
   "display": "fullscreen",
   "start_url": "/index.html",
+  "id": "https://magev958.github.io/index.html",
   "scope": "/",
   "orientation": "portrait-primary",
   "theme_color": "#ffffff",

@@ -21,54 +21,58 @@
 </head>
 
 <body>
-    <header>
+    <script type="text/javascript">
+        var submitted=false;
+    </script>
+	<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd_WQwTe9mlrvjfxXfl5zECzDD-9Z3ss2QDEzqz_DcI64w2DQ/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+	<header>
         <h1>Investeringar</h1>
     </header>
     <main>
         <article>
             <section>
-                <h3><label for="date">Datum</h3>
+                <h2><label for="date">Datum</h2>
                     <input type="date" id="date" name="entry.957079605" required placeholder="yyyy-mm-dd">
 				</section>
 		</article>
 		<article>
 			<section>
-				<h3><label for="sum_avanza">Avanza</h3>
+				<h2><label for="sum_avanza">Avanza</h2>
                    <input type="number" min="0" step="0.01" id="sum_avanza" name="entry.163121068" required placeholder="belopp">
 			</section>
 		</article>
 		<article>
 			<section>
-				<h3><label for="sum_lysa">Lysa</h3>
+				<h2><label for="sum_lysa">Lysa</h2>
                 <input type="number" min="0" step="0.01" id="sum_lysa" name="entry.999915928" required placeholder="belopp">
 			</section>
 		</article>
 		<article>
 			<section>
-				<h3><label for="sum_nordnet">Nordnet</h3>
+				<h2><label for="sum_nordnet">Nordnet</h2>
                 <input type="number" min="0" step="0.01" id="sum_nordnet" name="entry.2074101085" required placeholder="belopp">
 			</section>
 		</article>
 		<article>
 			<section>
-				<h3><label for="sum_garantum">Garantum</h3>
+				<h2><label for="sum_garantum">Garantum</h2>
                 <input type="number" min="0" step="0.01" id="sum_garantum" name="entry.822899927" required placeholder="belopp">
 			</section>
 		</article>
 		<article>
 			<section>
-				<h3><label for="sum_folksom">Folksam</h3>
+				<h2><label for="sum_folksom">Folksam</h2>
                 <input type="number" min="0" step="0.01" id="sum_folksam" name="entry.1298989261" required placeholder="belopp">
 			</section>
 		</article>
 		<article>
 			<section>
-				<h3><label for="sum_dept">Låneskuld</h3>
+				<h2><label for="sum_dept">Låneskuld</h2>
                 <input type="number" min="0" step="0.01" id="sum_debt" name="entry.126021406" required placeholder="belopp">
 			</section>
 		</article>
 	</main>
-    <nav style="bottom:100px">
+    <nav style="bottom:75px">
 		<button type="submit">skicka
 		</button>
 	</nav>
@@ -86,10 +90,10 @@
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thanks.html';}">
 	</iframe>
 	<script>
-		if ('serviceWorker' in navigator){navigator.serviceWorker.register('serviceWorker.js', {scope: './'}).catch(function(err){console.log('ServiceWorker registration failed: ', err);});}
-	</script>
-    <script type="text/javascript">
-        var submitted=false;
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
     </script>
 </body>
 
