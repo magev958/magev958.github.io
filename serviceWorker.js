@@ -1,5 +1,5 @@
-const version = '2';
-const old = '1';
+const version = '3';
+const old = '2';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -67,18 +67,3 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-
-// Testing particular host
-self.addEventListener('fetch', function (event) {
-  var requestURL = new URL(event.request.url);
-
-  if (requestURL.hostname == 'https://sheets.googleapis.com') {
-    event.respondWith(
-	    caches.open('mysite-dynamic').then(function (cache) {
-      return fetch(event.request).then(function (response) {
-        cache.put(event.request, response.clone());
-        return response;
-      });
-    }),);
-    return;
-}};
