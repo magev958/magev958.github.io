@@ -1,4 +1,5 @@
-const version = '1';
+const version = '2';
+const old = '1';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -49,3 +50,35 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+// Removing outdated caches
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(`static-${old}`) {
+      return Promise.all(
+        (`static-${old}`).filter(function(`static-${old}`) {
+          // Return true if you want to remove this cache,
+          // but remember that caches are shared across
+          // the whole origin
+        }).map(function(`static-${old}`) {
+          return caches.delete(`static-${old}`);
+        })
+      );
+    })
+  );
+});
+
+// Testing particular host
+self.addEventListener('fetch', function (event) {
+  var requestURL = new URL(event.request.url);
+
+  if (requestURL.hostname == 'https://sheets.googleapis.com') {
+    event.respondWith(
+	    caches.open('mysite-dynamic').then(function (cache) {
+      return fetch(event.request).then(function (response) {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    }),);
+    return;
+}};
