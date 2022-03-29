@@ -50,20 +50,3 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
-
-// Removing outdated caches
-self.addEventListener('activate', function(event) {
-  event.waitUntil(
-    caches.keys().then(function(`static-${old}`) {
-      return Promise.all(
-        (`static-${old}`).filter(function(`static-${old}`) {
-          // Return true if you want to remove this cache,
-          // but remember that caches are shared across
-          // the whole origin
-        }).map(function(`static-${old}`) {
-          return caches.delete(`static-${old}`);
-        })
-      );
-    })
-  );
-});
