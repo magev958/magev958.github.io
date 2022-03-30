@@ -1,5 +1,4 @@
-const version = '8';
-var cacheName = 'static-${version}';
+const version = '5';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
