@@ -1,10 +1,10 @@
-const version = '6';
+const version = '7';
 var cacheName = 'static-${version}';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
-      .open(`static-${version}`)
+      .open(cacheName)
       .then((cache) =>
         cache.addAll([
           '/',
@@ -31,7 +31,7 @@ self.addEventListener('install', (event) => {
 // Cache then network
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.open(`static-${version}`).then(function(cache) {
+    caches.open(cacheName).then(function(cache) {
       return fetch(event.request).then(function(response) {
         cache.put(event.request, response.clone());
         return response;
@@ -46,7 +46,7 @@ self.addEventListener('fetch', function (event) {
 
   if (requestURL.hostname == 'https://sheets.googleapis.com/v4/spreadsheets/1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU/values/Dashboard?alt=json&key=AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY') {
     event.respondWith(
-	  caches.open(`static-${version}`).then(function (cache) {
+	  caches.open(cacheName).then(function (cache) {
         return fetch(event.request).then(function (response) {
           cache.put(event.request, response.clone());
         return response;
@@ -61,7 +61,7 @@ self.addEventListener('fetch', function (event) {
 
   if (requestURL.hostname == 'https://sheets.googleapis.com/v4/spreadsheets/1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU/values/M%C3%A5nadsf%C3%B6rdelning?alt=json&key=AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY') {
     event.respondWith(
-	  caches.open(`static-${version}`).then(function (cache) {
+	  caches.open(cacheName).then(function (cache) {
         return fetch(event.request).then(function (response) {
           cache.put(event.request, response.clone());
         return response;
