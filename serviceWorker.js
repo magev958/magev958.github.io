@@ -43,22 +43,7 @@ self.addEventListener('fetch', function(event) {
 self.addEventListener('fetch', function (event) {
   var requestURL = new URL(event.request.url);
 
-  if (requestURL.hostname == 'https://sheets.googleapis.com/v4/spreadsheets/1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU/values/Dashboard?alt=json&key=AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY') {
-    event.respondWith(
-	  caches.open(`static-${version}`).then(function (cache) {
-        return fetch(event.request).then(function (response) {
-          cache.put(event.request, response.clone());
-        return response;
-      });
-    }),);
-    return;
-}});
-
-// Testing particular host
-self.addEventListener('fetch', function (event) {
-  var requestURL = new URL(event.request.url);
-
-  if (requestURL.hostname == 'https://sheets.googleapis.com/v4/spreadsheets/1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU/values/M%C3%A5nadsf%C3%B6rdelning?alt=json&key=AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY') {
+  if (requestURL.hostname == 'https://sheets.googleapis.com/(.*)') {
     event.respondWith(
 	  caches.open(`static-${version}`).then(function (cache) {
         return fetch(event.request).then(function (response) {
