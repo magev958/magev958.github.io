@@ -79,3 +79,13 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+// Clearing the cache
+self.addEventListener('activate', (e) => {
+  e.waitUntil(caches.keys().then((keyList) => {
+    return Promise.all(keyList.map((key) => {
+      if (key === cacheName) { return; }
+      return caches.delete(key);
+    }))
+  }));
+});
