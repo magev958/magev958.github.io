@@ -1,9 +1,9 @@
-const version = '5';
+const CACHE_NAME = 'static-v06';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
-      .open(`static-${version}`)
+      .open(CACHE_NAME)
       .then((cache) =>
         cache.addAll([
           '/',
@@ -30,7 +30,7 @@ self.addEventListener('install', (event) => {
 // Cache then network
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.open(`static-${version}`).then(function(cache) {
+    caches.open(CACHE_NAME).then(function(cache) {
       return fetch(event.request).then(function(response) {
         cache.put(event.request, response.clone());
         return response;
@@ -45,7 +45,7 @@ self.addEventListener('fetch', function (event) {
 
   if (requestURL.hostname == 'https://sheets.googleapis.com/(.*)') {
     event.respondWith(
-	  caches.open(`static-${version}`).then(function (cache) {
+	  caches.open(CACHE_NAME).then(function (cache) {
         return fetch(event.request).then(function (response) {
           cache.put(event.request, response.clone());
         return response;
@@ -69,7 +69,7 @@ self.addEventListener('fetch', function(event) {
 self.addEventListener('activate', (e) => {
   e.waitUntil(caches.keys().then((keyList) => {
     return Promise.all(keyList.map((key) => {
-      if (key === cacheName) { return; }
+      if (key === CACHE_NAME) { return; }
       return caches.delete(key);
     }))
   }));
