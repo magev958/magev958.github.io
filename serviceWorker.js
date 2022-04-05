@@ -42,15 +42,7 @@ self.addEventListener('fetch', function(event) {
 // Testing particular host
 self.addEventListener('fetch', function (event) {
   var requestURL = new URL(event.request.url);
-
   if (requestURL.hostname == 'https://sheets.googleapis.com/(.*)') {
-    event.respondWith(
-	  caches.open(CACHE_NAME).then(function (cache) {
-        return fetch(event.request).then(function (response) {
-          cache.put(event.request, response.clone());
-        return response;
-      });
-    }),);
     return;
 }});
 
