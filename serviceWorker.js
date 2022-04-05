@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-v07';
+const CACHE_NAME = 'static-v08';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -22,13 +22,13 @@ self.addEventListener('install', (event) => {
           '/Images/icon.svg',
           '/Images/icon-192.png',
           '/Images/icon-512.png',
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.core.min.js',
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.dynamic.min.js',	
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js',	
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.tooltips.min.js',	
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.meter.min.js',
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.pie.min.js',
-          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.svg.common.key.min.js'
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.core.min.js',
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.dynamic.min.js',	
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js',	
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.tooltips.min.js',	
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.meter.min.js',
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.pie.min.js',
+          'https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.svg.common.key.min.js'
         ]),
       ),
   );
