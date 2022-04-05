@@ -39,7 +39,7 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-// Testing particular host
+// Network first, falling back to cache
 self.addEventListener('fetch', function (event) {
   var requestURL = new URL(event.request.url);
   if (requestURL.hostname == 'https://sheets.googleapis.com/(.*)') {
