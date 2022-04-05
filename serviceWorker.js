@@ -43,15 +43,6 @@ self.addEventListener('fetch', function(event) {
 self.addEventListener('fetch', function (event) {
   var requestURL = new URL(event.request.url);
   if (requestURL.hostname == 'https://sheets.googleapis.com/(.*)') {
-    event.respondWith(caches.open(CACHE_NAME).then((cache) => {
-      return fetch(event.request.url).then((fetchedResponse) => {
-        cache.put(event.request, fetchedResponse.clone());
-        return fetchedResponse;
-      }).catch(() => {
-        return cache.match(event.request.url);
-      });
-    }));
-  } else {
     return;
   }
 });
