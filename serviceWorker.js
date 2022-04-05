@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-v06';
+const CACHE_NAME = 'static-v07';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -21,7 +21,14 @@ self.addEventListener('install', (event) => {
           '/Images/favicon-128x128.png',
           '/Images/icon.svg',
           '/Images/icon-192.png',
-          '/Images/icon-512.png'
+          '/Images/icon-512.png',
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.core.min.js',
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.dynamic.min.js',	
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js',	
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.common.tooltips.min.js',	
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.meter.min.js',
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.pie.min.js',
+          'https://cdnjs.cloudflare.com//ajax/libs/RGraph/6.06/RGraph.svg.common.key.min.js'
         ]),
       ),
   );
@@ -39,7 +46,7 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-// Network first, falling back to cache
+// Network first
 self.addEventListener('fetch', function (event) {
   var requestURL = new URL(event.request.url);
   if (requestURL.hostname == 'https://sheets.googleapis.com/(.*)') {
