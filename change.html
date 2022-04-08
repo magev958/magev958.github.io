@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard ändring</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="darkgray">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+	<link rel="preconnect" href="https://sheets.googleapis.com">
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+</head>
+
+<body>
+    <header>
+        <h1>Förändring</h1>
+    </header>
+	<main>
+    <article>
+        <section>
+            <h2>Ändring sedan igår</h2><br>
+				<iframe id="transaktions" title="Transaktioner" class="table x-tall" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQC_I5AmZEbh7vZjuqdLGAZdUAhSrRDI0qBRrUFHqhVUadAU_RHs5NsisYytdt634TO_CP2E_b0FV5Q/pubhtml/sheet?headers=false&amp;gid=1303280110&amp;range=M35:O37"></iframe>
+		</section>
+    </article>
+	</main>
+    <nav>
+		<button type="button" onclick="location.href='transactions.html'">transaktion
+		</button>
+		<button type="button" onclick="location.href='investments.html'">investeringar
+		</button>
+		<button type="button" onclick="location.href='latest.html'">senaste
+		</button>
+		<button type="button" onclick="location.href='distribution.html'">fördelning
+		</button>
+	</nav>
+	<script>
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
+    </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.core.min.js" integrity="sha512-uicQyGgzNfQxAqhx3QtC6SyJ24s3t+rG6rlGPypopvkVDyxHqsZU5Y/4svn+q0wQBqH9O3PwlE3BKUyDFzDP/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.common.sheets.min.js" integrity="sha512-Ie9fHbuaumuhyjSzHbRO+fVVNjc4jRYjSigbwn1YYu0mrwGOWTiXj6KkeWlrk3cgMPcbZzFVyPipwVnvMXq7Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/RGraph/6.06/RGraph.meter.min.js" integrity="sha512-PnL9Ge9rRIdOPoDgP60679YFQ4j3l2u/KfZMmj1ZKK+Qtktd1ipUafNkG0+RSIRwSzH1BwzaLExYasNSrm39Ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+            defaultColors=[[0, 30, "#8FCE21"],[30, 37.5, "#FFEE58"],[37.5, 45, "#FFC107"],[45, 52.5, "#FB8C00"],[52.5, 60, "#E64A19"]],
+            	new RGraph.Sheets(
+					'AIzaSyA9oqmzJDyQQ451lKHuBaCOzRTw9hsETxY',
+					'1ix8rJcgbGu_fnD0LqwBhv1rbFm3t2zYtVDix1lwDBLU',
+					'Dashboard',
+					function(e)
+            			{
+            				var a=e.get('I15');
+            			new RGraph.Meter({
+            				id: "meter",
+            				min: 0,
+            				max: 60,
+            				value: a,
+            				options:{
+            					colorsRanges: defaultColors,
+            					labelsCount: 0,
+            					anglesStart: RGraph.PI - 1.6,
+            					anglesEnd: RGraph.TWOPI - 1.55,
+            					marginBottom: 150,
+								marginRight: -150,
+            					segmentsRadiusStart: 150,
+            					needleRadius: 90,
+            					needleType: "pointer",
+								backgroundColor: "white",
+            					border: 0
+            					}
+            				}).grow()});
+	</script>
+</body>
+
+</html>
