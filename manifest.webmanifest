@@ -27,57 +27,63 @@
 	"src": "/Images/icon-512.png",
 	"type": "image/png",
 	"sizes": "512x512"
+	},
+	{
+	"src": "/Images/maskable_icon.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "maskable"
 	}
-  ],
+  ]
   "shortcuts": [
     {
-      "name": "Personlig budgetkalkyl?",
-      "short_name": "Budget",
-      "description": "Personlig begdetkalkyl för Magnus",
-      "url": "/index.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Personlig budgetkalkyl?",
+    "short_name": "Budget",
+    "description": "Personlig begdetkalkyl för Magnus",
+    "url": "/index.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Månadsfördelning",
-      "short_name": "Fördelning",
-      "description": "Senaste månadens fördelning",
-      "url": "/distribution.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Månadsfördelning",
+    "short_name": "Fördelning",
+    "description": "Senaste månadens fördelning",
+    "url": "/distribution.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Investeringstransaktioner",
-      "short_name": "Investeringar",
-      "description": "Utfall av investeringarna",
-      "url": "/investments.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Investeringstransaktioner",
+    "short_name": "Investeringar",
+    "description": "Utfall av investeringarna",
+    "url": "/investments.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Senaste transaktioner",
-      "short_name": "Senaste",
-      "description": "7 senaste transaktioner",
-      "url": "/latest.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Senaste transaktioner",
+    "short_name": "Senaste",
+    "description": "7 senaste transaktioner",
+    "url": "/latest.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Nedkopplad wifi",
-      "short_name": "Nedkopplad",
-      "description": "Ingen åtkomst till wifi ",
-      "url": "/offline.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Nedkopplad wifi",
+    "short_name": "Nedkopplad",
+    "description": "Ingen åtkomst till wifi ",
+    "url": "/offline.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Tack",
-      "short_name": "Tack",
-      "description": "Tack för en berömlig insats",
-      "url": "/thanks.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Tack",
+    "short_name": "Tack",
+    "description": "Tack för en berömlig insats",
+    "url": "/thanks.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Rutintransaktioner",
-      "short_name": "Transaktioner",
-      "description": "Skicka transaktioner",
-      "url": "/transactions.html",
-      "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
+    "name": "Rutintransaktioner",
+    "short_name": "Transaktioner",
+    "description": "Skicka transaktioner",
+    "url": "/transactions.html",
+    "icons": [{ "src": "/Images/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
