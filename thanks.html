@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Tack :)</title>
     <meta name="description" content="Personlig budgetkalkyl för Magnus">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,16 +32,14 @@
             </section>
         </article>
     </main>
-    <nav>
-        <button type="button" onclick="location.href='transactions.html'">transaktion
+	<nav>
+		<button type="button" onclick="location.href='latest.html'">översikt
 		</button>
-        <button type="button" onclick="location.href='investments.html'">investeringar
+		<button type="button" onclick="location.href='transactions.html'">transaktion
 		</button>
-        <button type="button" onclick="location.href='latest.html'">senaste
+		<button type="button" onclick="location.href='investments.html'">investeringar
 		</button>
-        <button type="button" onclick="location.href='distribution.html'">f&ouml;rdelning
-		</button>
-	</nav>
+    </nav>
 	<script>
         if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
