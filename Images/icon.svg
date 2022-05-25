@@ -1,4 +1,65 @@
-<svg xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <path d="M466.8 187.2A210.4 210.4 0 0 0 406 103c-3.8-14.1-.9-29.3 9-45a28.3 28.3 0 0 0-23.8-43.4c-27.3 2-62.3 19.2-79.1 38.3a207.8 207.8 0 0 0-42.1-7.2c-10-1-20-1.6-30-1.6a256.1 256.1 0 0 0-169 61.3C25.3 145.5 0 198.9 0 255.8a187 187 0 0 0 5.1 43.8l.3.9v.5c3.6 14.5 9 28.7 15.8 42.2a222.6 222.6 0 0 0 40.4 61A95.6 95.6 0 0 1 87 465v6.2c0 1.2.2 2.2.4 3.3a27 27 0 0 0 26.6 23h78.3a27 27 0 0 0 27-27v-3.6c11 .8 22.3 1 33.5.4v3.2a27 27 0 0 0 27 27h78.3a27 27 0 0 0 27-27v-19.1c7.2-23.4 9.1-32.3 24.5-46l.2-.1c25-25.1 47.4-55.7 58.1-84 23.8.1 43.6-20.5 44.1-37.8V225c-5.9-27.2-23.2-37.7-45.2-37.7zM391.1 42.9v-.1c-2-15.5-2-15.5 0 0zM484 283.5c0 5.2-4.3 9.5-9.6 9.5H458c-6.2 0-11.7 4.1-13.5 10a179.4 179.4 0 0 1-53 80.7l-.2.2v.2l-2.9 2.5-.3.3a91.3 91.3 0 0 0-31 64v18.3h-75.7V452a14.3 14.3 0 0 0-15.7-14.1c-19.8 2-40.2 1.6-58.5-.8-4.1-.5-8.2.7-11.3 3.3-3 2.8-4.8 6.7-4.8 10.8v18h-75.5V464c-.6-14.2-5.1-50.4-33.4-79.5A192 192 0 0 1 47 331l-.2-.5c-6-11.7-10.6-23.8-13.6-36.3l-.1-.3v-.3c-3-12.3-4.5-25-4.5-37.7 0-101 94.9-183.3 211.5-183.3 9 0 18.2.5 27.1 1.5h.7c11.7.8 33.6 3.9 42.3 8.6a14.2 14.2 0 0 0 18.5-4.5c9-13.6 27.4-30.7 62.4-35-9.6 18.9-23.4 64.5-6.9 78.8 28.4 22.9 49 52 59.4 84 2 5.7 7.4 9.7 13.5 9.7h17.4c5.3 0 9.6 4.3 9.6 9.6v58.2z"/>
-  <path d="M115.6 460.7A124.6 124.6 0 0 0 81.4 383a186.7 186.7 0 0 1-31.8-48c-11-22.1-16-36.7-19-56.4-2-12.5-2-34.4 0-46.4 6-36 23-68.7 50-95.6a194 194 0 0 1 55.7-39.5 236 236 0 0 1 74.3-22.4c30.5-4 79.2 0 98 7.8 10 4.2 15.1 2.5 23-7.6A85 85 0 0 1 386 44.4l3.8-.5-3.6 9c-7.6 18.8-11.6 40.8-9.7 53.4a40 40 0 0 0 2.6 9.8 66 66 0 0 0 10.6 11.3c25 22.8 41.8 47 51.8 74.5 4.5 12.4 7.4 14.1 23.5 14.1 10.2 0 11.4.2 14 2 1.6 1 3.2 3 3.8 4.7 1.2 3.7 1.4 58 .2 62.4-.5 1.7-2 4-3.4 5.2-2.4 2-3 2.2-13.5 2.2-9.7 0-11.4.2-14.6 1.8-4.8 2.5-6.1 4.4-9.6 14.4-6.3 18-18.8 39.7-31.6 54.8a399.8 399.8 0 0 1-18.5 19.1c-14.5 14-21 22.3-26.4 33.3a74.2 74.2 0 0 0-8.5 37.5l-.4 15.2H282V460c0-9.9-1-13.7-3.9-17.3-4.2-5-5-5-26.7-4.4-14 .4-23.3.2-32.2-.6-18.8-1.7-21.3-1.2-25.9 4.8-2.2 3-2.3 3.4-2.6 14.5l-.2 11.5h-74.4Z" fill="#ffd5d5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="e" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#cf4d7a"/>
+      <stop offset="100%" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="h" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".4"/>
+      <stop offset="25%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="20%" stop-color="#e99fc1"/>
+      <stop offset="80%" stop-color="#da5f8b"/>
+    </linearGradient>
+    <linearGradient id="i" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%"/>
+      <stop offset="100%" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#c95179"/>
+      <stop offset="100%" stop-color="#e587ae"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e8a4c5"/>
+      <stop offset="100%" stop-color="#cb4e7a"/>
+    </linearGradient>
+    <radialGradient id="c" cx=".5" cy=".5" r=".7" fx=".5" fy=".3" spreadMethod="pad">
+      <stop offset="10%" stop-color="#fae7fa"/>
+      <stop offset="100%" stop-color="#cf4d7a"/>
+    </radialGradient>
+    <radialGradient id="f" cx=".5" cy=".5" r=".5" fx=".5" fy=".3">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="100%"/>
+    </radialGradient>
+    <radialGradient id="d" cx=".1" cy=".1" r=".7" fx=".5" fy=".3">
+      <stop offset="0%" stop-color="#7a162f"/>
+      <stop offset="100%" stop-color="#a92851"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#a)" d="M34 18c74-27 130 23 131 24-1-1-103 98-105 99 0 0-47-54-26-123z"/>
+  <path fill="url(#b)" d="M51 34c57-21 102 18 102 18l-82 79S34 89 51 34z"/>
+  <path fill="url(#a)" d="M416 2h26c36 34 43 73 23 117l-5 6c-22-26-48-48-78-66-13-6-25-14-38-21 21-19 45-31 72-36z"/>
+  <path fill="url(#b)" d="M416 18h20c28 26 34 57 18 92l-3 5c-18-21-39-38-62-52l-30-17c16-15 35-24 57-28z"/>
+
+  <path fill="url(#c)" d="M448 376c3 38 1 76-6 114-1 7-4 12-8 17-28 1-56 2-84 1-10-3-17-8-22-16-5-14-15-21-29-21l-12-1-25 2c45-11 88-27 129-48 18-11 36-24 51-40l6-8z"/>
+  <path fill="url(#d)" d="M221 467a392 392 0 0 1 43 4c-1 9-3 17-6 26l-6 9-82 1c14-6 23-16 29-30 6-6 14-9 22-10z"/>
+  <path fill="url(#c)" d="M71 375c26 29 57 50 94 65 30 13 62 23 95 31l-26-2c-13-1-25 3-35 10-4 10-10 17-17 24l-11 4a1599 1599 0 0 1-85-2c-4-4-6-9-7-14-5-24-8-48-8-73v-43z"/>
+  <path fill="url(#d)" d="M294 469h28c9 1 16 5 22 11 5 14 15 23 29 28h-80c-4-2-8-5-9-10-4-9-5-18-4-27l14-2z"/>
+
+  <ellipse cx="256" cy="256" rx="256" ry="235" fill="url(#c)"/>
+
+  <ellipse cx="210" cy="160" rx="18" ry="24" transform="skewX(-10)"/>
+  <ellipse cx="302" cy="160" rx="18" ry="24" transform="skewX(10)"/>
+  <ellipse cx="210" cy="160" rx="19" ry="25" fill="none" stroke="url(#e)" stroke-width="2" transform="skewX(-10)"/>
+  <ellipse cx="302" cy="160" rx="19" ry="25" fill="none" stroke="url(#e)" stroke-width="2" transform="skewX(10)"/>
+  <ellipse cx="212" cy="157" rx="10" ry="15" fill="url(#f)" transform="skewX(-10)"/>
+  <ellipse cx="300" cy="157" rx="10" ry="15" fill="url(#f)" transform="skewX(10)"/>
+
+  <ellipse cx="256" cy="280" rx="90" ry="70" fill="url(#g)"/>
+  <ellipse cx="256" cy="280" rx="81" ry="61" fill="none" stroke="url(#h)" stroke-width="10"/>
+  <ellipse cx="220" cy="280" rx="14" ry="18" fill="#d15b7d"/>
+  <ellipse cx="292" cy="280" rx="14" ry="18" fill="#d15b7d"/>
+  <ellipse cx="220" cy="280" rx="14" ry="19" fill="none" stroke="url(#i)"/>
+  <ellipse cx="292" cy="280" rx="14" ry="19" fill="none" stroke="url(#i)"/>
 </svg>
